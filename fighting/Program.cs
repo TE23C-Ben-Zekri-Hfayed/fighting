@@ -55,15 +55,15 @@ while (heroHp > 0 && villainHp > 0)
     int heroDamage = generator.Next(20);
     villainHp = Math.Max(0, villainHp - heroDamage);
     Console.ForegroundColor = ConsoleColor.Green;
-Console.Write($"{heroName}");
-Console.ResetColor();
+    Console.Write($"{heroName}");
+    Console.ResetColor();
     Console.Write($" deals ");
     Console.ForegroundColor = ConsoleColor.Red;
     Console.Write($"{heroDamage}");
     Console.ResetColor();
-    Console.WriteLine($" damage to");
+    Console.Write($" damage to ");
     Console.ForegroundColor = ConsoleColor.DarkRed;
-    Console.Write($" {villainName}");
+    Console.Write($"{villainName}");
     Console.ResetColor();
 
     Console.ReadLine();
@@ -73,12 +73,17 @@ Console.ResetColor();
 
     int VillainDamage = generator.Next(20);
     heroHp = Math.Max(0, heroHp - VillainDamage);
-
-    Console.Write($"{villainName} deals ");
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.Write($"{villainName} ");
+    Console.ResetColor();
+    Console.Write($"deals ");
     Console.ForegroundColor = ConsoleColor.Red;
     Console.Write($"{VillainDamage}");
     Console.ResetColor();
-    Console.WriteLine($" damage to {heroName}.");
+    Console.Write($" damage to ");
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.Write($"{heroName}");
+    Console.ResetColor();
 
     Console.ReadLine();
     Console.Clear();
